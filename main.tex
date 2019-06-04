@@ -1,0 +1,114 @@
+\documentclass[11pt,aspectratio=169]{beamer}
+
+% Packages
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{appendixnumberbeamer}
+\usepackage{scalerel}
+\usepackage{multicol}
+\usepackage{media9}
+\usepackage{csquotes}
+
+% Options
+\usetikzlibrary{calc}
+\graphicspath{{images/}}
+\addmediapath{media/}
+
+\definecolor{courage}{RGB}{0, 103, 120}
+\definecolor{charcoal}{RGB}{29, 37, 45}
+\definecolor{indro}{RGB}{130,36,51}
+\definecolor{spinelli}{RGB}{241,231,233}
+\definecolor{white}{RGB}{255,255,255}
+\graphicspath{{images/}}
+
+% Mode
+\usetheme{metropolis}
+\setbeamercolor{normal text}{fg=charcoal}
+\setbeamercolor{alerted text}{fg=courage}
+\setbeamercolor{example text}{fg=indro}
+\setbeamercolor{frametitle}{bg=spinelli}
+\setbeamercolor{frametitle}{fg=indro}
+\setbeamercolor{button}{bg=courage}
+\setbeamercolor{progress bar}{fg=courage}
+\setbeamercolor{section title}{fg=indro}
+
+\title[Title]{Title}
+\subtitle{Subtitle}
+\date{0 0, 0000}
+\author[I.Spinelli]{Indro Spinelli}
+\institute[uniroma1]{Sapienza University of Rome}
+\logo{
+	\begin{tikzpicture}[overlay, remember picture]
+		\node[opacity=0.05] at ($(current page.south east) + (0.0cm,0.45cm)$){
+			\includegraphics[scale=0.15]{SapienzaLogo.pdf}};
+	\end{tikzpicture}
+}
+
+\setbeamercolor{block title alerted}{bg=}
+\setbeamercolor{block title example}{bg=}
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+\setbeamertemplate{frame footer}{
+	\insertshortauthor\hspace{0.38\paperwidth}\insertshorttitle\
+}
+
+% Document
+\begin{document}
+	
+	% Title
+    \setbeamercolor{normal text}{fg=indro,bg=white}
+	\maketitle
+    \setbeamercolor{normal text}{fg=charcoal,bg=white}
+    
+    % Table of Contents
+	\begin{frame}{Table of Contents}
+		\setbeamertemplate{section in toc}[sections numbered]
+		\tableofcontents[hideallsubsections]
+	\end{frame}
+    
+    % Section
+	\section{Section}
+    
+    % Single column
+	\begin{frame}{Frame Title}
+	    text
+		\begin{alertblock}{Alert title}
+    		text
+		\end{alertblock}
+	\end{frame}
+    
+    % Double column
+	\begin{frame}{Frame Title}
+	
+		\begin{columns}[T]
+			\column{0.50\linewidth}
+	        \begin{exampleblock}{Alert title}
+		    \end{exampleblock}
+			
+			\column{0.50\linewidth}
+			\begin{alertblock}{Alert title}
+				\begin{itemize}
+					\item<+->1
+					\item<+-> 2
+				\end{itemize}
+			\end{alertblock}
+		\end{columns}
+	\end{frame}
+
+	\appendix
+	
+	\metroset{numbering=none}
+	\setbeamercolor{normal text}{fg=spinelli}
+	\setbeamercolor{normal text}{bg=indro}
+
+    % The end
+	\begin{frame}[standout]
+	    \vspace{10mm}
+		\includegraphics[scale=0.20]{SapienzaLogo.pdf}
+	\end{frame}
+
+\end{document}
