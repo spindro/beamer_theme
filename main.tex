@@ -1,4 +1,4 @@
-\documentclass[11pt,aspectratio=169]{beamer}
+\documentclass[11pt,aspectratio=43]{beamer}
 
 % Packages
 \usepackage[T1]{fontenc}
@@ -21,8 +21,8 @@
 
 \definecolor{courage}{RGB}{0, 103, 120}
 \definecolor{charcoal}{RGB}{29, 37, 45}
-\definecolor{indro}{RGB}{130,36,51}
-\definecolor{spinelli}{RGB}{241,231,233}
+\definecolor{redSap}{RGB}{130,36,51}
+\definecolor{redSap_bg}{RGB}{241,231,233}
 \definecolor{white}{RGB}{255,255,255}
 \graphicspath{{images/}}
 
@@ -30,18 +30,22 @@
 \usetheme{metropolis}
 \setbeamercolor{normal text}{fg=charcoal}
 \setbeamercolor{alerted text}{fg=courage}
-\setbeamercolor{example text}{fg=indro}
-\setbeamercolor{frametitle}{bg=spinelli}
-\setbeamercolor{frametitle}{fg=indro}
+\setbeamercolor{example text}{fg=redSap}
+\setbeamercolor{frametitle}{bg=redSap_bg}
+\setbeamercolor{frametitle}{fg=redSap}
 \setbeamercolor{button}{bg=courage}
 \setbeamercolor{progress bar}{fg=courage}
-\setbeamercolor{section title}{fg=indro}
+\setbeamercolor{section title}{fg=redSap}
 
 \title[Title]{Title}
 \subtitle{Subtitle}
-\date{0 0, 0000}
-\author[I.Spinelli]{Indro Spinelli}
-\institute[uniroma1]{Sapienza University of Rome}
+\author[A.utor]{A utor}
+\date[uniroma1]{Sapienza University of Rome}
+\institute{\hspace{60mm}
+\includegraphics[scale=0.06]{SapienzaLogo.pdf}
+\hspace{10mm}
+\includegraphics[scale=0.7]{logo_ispamm.pdf}}
+
 \logo{
 	\begin{tikzpicture}[overlay, remember picture]
 		\node[opacity=0.05] at ($(current page.south east) + (0.0cm,0.45cm)$){
@@ -60,7 +64,7 @@
 \begin{document}
 	
 	% Title
-    \setbeamercolor{normal text}{fg=indro,bg=white}
+    \setbeamercolor{normal text}{fg=redSap,bg=white}
 	\maketitle
     \setbeamercolor{normal text}{fg=charcoal,bg=white}
     
@@ -102,13 +106,14 @@
 	\appendix
 	
 	\metroset{numbering=none}
-	\setbeamercolor{normal text}{fg=spinelli}
-	\setbeamercolor{normal text}{bg=indro}
+	\setbeamercolor{normal text}{fg=redSap_bg}
+	\setbeamercolor{normal text}{bg=redSap}
 
     % The end
 	\begin{frame}[standout]
 	    \vspace{10mm}
-		\includegraphics[scale=0.20]{SapienzaLogo.pdf}
+		\includegraphics[scale=0.2]{SapienzaLogo.pdf}
+		%\includegraphics[scale=0.90]{logo_ispamm.pdf}
 	\end{frame}
 
 \end{document}
