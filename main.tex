@@ -1,4 +1,4 @@
-\documentclass[11pt,aspectratio=43]{beamer}
+\documentclass[10pt,aspectratio=43]{beamer}
 
 % Packages
 \usepackage[T1]{fontenc}
@@ -13,6 +13,19 @@
 \usepackage{multicol}
 \usepackage{media9}
 \usepackage{csquotes}
+\usepackage[]{biblatex}
+\bibliography{biblio}
+
+\DeclareCiteCommand{\footpartcite}[\mkbibfootnote]
+{\usebibmacro{prenote}}%
+{\usebibmacro{citeindex}%
+    \printnames{labelname}%
+    \setunit{\labelnamepunct}
+    \printfield[citetitle]{title}%
+    \newunit
+    \printfield[]{year}}
+{\addsemicolon\space}
+{\usebibmacro{postnote}}
 
 % Options
 \usetikzlibrary{calc}
@@ -36,16 +49,21 @@
 \setbeamercolor{button}{bg=courage}
 \setbeamercolor{progress bar}{fg=courage}
 \setbeamercolor{section title}{fg=redSap}
+\setbeamertemplate{itemize items}[triangle]
+%\addtobeamertemplate{block begin}{}{\justifying}  %new code
+%\let\olditem\item
+%\renewcommand\item{\olditem\justifying}
 
 \title[Title]{Title}
 \subtitle{\textcolor{courage}{Subtitle}}
-\author[A.utor]{\textcolor{charcoal}{A utor}}
-\date[uniroma1]{\textcolor{charcoal}{Sapienza University of Rome}}
-\institute{\hspace{60mm}
+\author[A.utor]{\textcolor{charcoal}{\textbf{A utor}}}
+\date[uniroma1]{\textcolor{charcoal}{Sapienza University of Rome \newline ISPAMM Lab}}
+\institute{
+\vspace{10mm}
+\hspace{60mm}
 \includegraphics[scale=0.06]{SapienzaLogo.pdf}
 \hspace{10mm}
-\includegraphics[scale=0.7]{logo_ispamm.pdf}
-}
+\includegraphics[scale=0.7]{logo_ispamm.pdf}}
 
 \logo{
 	\begin{tikzpicture}[overlay, remember picture]
@@ -58,8 +76,9 @@
 \setbeamercolor{block title example}{bg=}
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}
 \setbeamertemplate{frame footer}{
-	\insertshortauthor\hspace{0.38\paperwidth}\insertshorttitle\
+	\insertshortauthor\hspace{0.32\paperwidth}\insertshorttitle\
 }
+
 
 % Document
 \begin{document}
